@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4F0; color: #1F1F1F; }
+    a { color: #2F6F6B; text-decoration: none; } a:hover { color: #1F4F4C; }
+    .phone { width: 390px; height: 844px; box-sizing: border-box; background: #8E8E89; border: 2px solid #1F1F1F; border-radius: 28px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; flex-shrink: 0; }
+    .sheet { background: #fff; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 12px; padding: 12px 16px 16px; height: 640px; box-sizing: border-box; }
+    .handle { width: 40px; height: 4px; border-radius: 2px; background: #D9D8D2; align-self: center; }
+    .field { height: 44px; border: 1.5px solid #1F1F1F; border-radius: 10px; padding: 0 14px; font-size: 15px; box-sizing: border-box; width: 100%; background: #fff; color: #1F1F1F; font-family: inherit; }
+    .chip { height: 32px; padding: 0 12px; border: 1.5px solid #1F1F1F; border-radius: 16px; display: flex; align-items: center; font-size: 12px; font-weight: 600; background: #fff; flex-shrink: 0; }
+    .chip.on { background: #1F1F1F; color: #fff; }
+    .row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #EDECE7; }
+    .ico { width: 40px; height: 40px; border-radius: 10px; border: 1.5px solid #9A9A94; box-sizing: border-box; flex-shrink: 0; }
+    .add { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1F1F1F; display: flex; align-items: center; justify-content: center; font-weight: 700; box-sizing: border-box; }
+    .add.on { background: #1F1F1F; color: #fff; }
+    .btn { height: 48px; border: 1.5px solid #1F1F1F; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; background: #fff; }
+    .primary { background: #1F1F1F; color: #fff; }
+    .badge { width: 20px; height: 20px; border-radius: 50%; background: #2F6F6B; color: #fff; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .spec { width: 510px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; padding: 4px 0; }
+    .spec h2 { margin: 0; font-size: 22px; }
+    .meta { font-size: 13px; color: #6B6B66; display: flex; flex-direction: column; gap: 4px; }
+    .spec table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .spec th, .spec td { border-top: 1px solid #D9D8D2; padding: 8px 6px; text-align: left; vertical-align: top; line-height: 1.45; }
+    .spec th { font-size: 12px; color: #6B6B66; font-weight: 600; }
+    .note { font-size: 12px; color: #6B6B66; line-height: 1.5; border-top: 1px solid #D9D8D2; padding-top: 10px; }
+  </style>
+</helmet>
+<div style="width: 940px; height: 844px; box-sizing: border-box; display: flex; gap: 40px;">
+  <div class="phone">
+    <div style="color: #fff; font-size: 12px; padding: 24px 16px; opacity: 0.8;">S03 트립 체크 화면 (딤 처리)</div>
+    <div class="sheet">
+      <div class="handle"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 17px; font-weight: 700;">아이템 추가</span>
+        <span style="font-size: 13px; color: #6B6B66;">이번 트립에 없는 아이템</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;"><span class="badge">1</span><input class="field" aria-label="아이템 검색" placeholder="아이템 검색"></div>
+      <div style="display: flex; gap: 6px; align-items: center; overflow: hidden;">
+        <span class="badge">2</span>
+        <span class="chip on">전체</span><span class="chip">침구</span><span class="chip">화기</span><span class="chip">위생</span><span class="chip">의류</span><span class="chip">기타</span>
+      </div>
+      <div style="display: flex; flex-direction: column; flex-grow: 1; overflow: hidden;">
+        <div class="row"><span class="badge">3</span><span class="ico"></span><div style="flex-grow: 1; display: flex; flex-direction: column;"><span style="font-weight: 600;">난로</span><span style="font-size: 12px; color: #6B6B66;">화기</span></div><span class="add on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></span></div>
+        <div class="row"><span class="ico"></span><div style="flex-grow: 1; display: flex; flex-direction: column;"><span style="font-weight: 600;">전기장판</span><span style="font-size: 12px; color: #6B6B66;">침구</span></div><span class="add">+</span></div>
+        <div class="row"><span class="ico"></span><div style="flex-grow: 1; display: flex; flex-direction: column;"><span style="font-weight: 600;">핫팩</span><span style="font-size: 12px; color: #6B6B66;">기타 · 커스텀</span></div><span class="add">+</span></div>
+        <div class="row"><span class="ico"></span><div style="flex-grow: 1; display: flex; flex-direction: column;"><span style="font-weight: 600;">방한모</span><span style="font-size: 12px; color: #6B6B66;">의류</span></div><span class="add">+</span></div>
+        <div class="row"><span class="ico"></span><div style="flex-grow: 1; display: flex; flex-direction: column;"><span style="font-weight: 600;">구급함</span><span style="font-size: 12px; color: #6B6B66;">위생</span></div><span class="add">+</span></div>
+      </div>
+      <a href="S08_ItemEdit.dc.html" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;"><span class="badge">4</span>찾는 아이템이 없나요? 커스텀 아이템 만들기</a>
+      <a href="S03_TripCheck.dc.html" class="btn primary"><span class="badge" style="background: #fff; color: #1F1F1F; margin-right: 8px;">5</span>1개 추가</a>
+    </div>
+  </div>
+
+  <aside class="spec">
+    <div class="meta"><span>S04 · 3레벨 · 바텀시트 (S03 위)</span></div>
+    <h2>아이템 추가 시트</h2>
+    <div class="meta">
+      <span>진입: S03 [+ 아이템] / S02 [세트 없이 시작]</span>
+      <span>목적: 세트에 없던 아이템을 이번 트립에만 추가</span>
+    </div>
+    <table>
+      <tr><th style="width: 34px;">No</th><th style="width: 120px;">구성 요소</th><th>설명</th></tr>
+      <tr><td>1</td><td>검색</td><td>이름 부분 일치, 입력 즉시 필터. 시트 열릴 때 자동 포커스 없음(트렁크 앞 사용 전제, 키보드 강제 노출 방지)</td></tr>
+      <tr><td>2</td><td>카테고리 칩</td><td>가로 스크롤. 트립에 이미 전부 담긴 카테고리는 표시하지 않음</td></tr>
+      <tr><td>3</td><td>아이템 행</td><td>트립에 <b>없는</b> 아이템만 노출. 아이콘·이름·카테고리(커스텀 표기). 우측 [+] 탭 → 선택 토글(다중 선택). 수량은 기본 수량으로 추가, 변경은 S03 롱프레스에서</td></tr>
+      <tr><td>4</td><td>커스텀 만들기</td><td>→ S08. 저장 후 이 시트로 복귀하며 해당 아이템 선택 상태</td></tr>
+      <tr><td>5</td><td>추가 버튼</td><td>선택 개수 표시. 미챔김 상태로 트립에 추가 → S03 닫기. 0개면 비활성</td></tr>
+    </table>
+    <div class="note">시트로 만든 이유: 체크 도중 "아 이것도" 하는 상황이 대부분이므로 S03 컨텍스트를 유지해야 함. 시트 밖 딤 영역 탭 = 선택 취소 없이 닫기.</div>
+  </aside>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":940,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

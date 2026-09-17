@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: "IBM Plex Sans KR", "Pretendard", -apple-system, "Apple SD Gothic Neo", sans-serif; background: #FFFFFF; color: #111111; }
+    a { color: #111111; text-decoration: none; } a:hover { color: #157A48; }
+    .mono { font-family: "IBM Plex Mono", "SF Mono", Menlo, monospace; }
+    .tabbar { height: 72px; border-top: 1px solid #E4E4E0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); flex-shrink: 0; padding-bottom: 6px; box-sizing: border-box; }
+    .tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; font-weight: 500; color: #8A8A85; }
+    .tab.on { color: #111111; font-weight: 600; }
+    .mini { width: 44px; height: 44px; border-radius: 12px; border: 1.5px solid #D6D6D2; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+    .mini.done { background: #157A48; border-color: #157A48; color: #fff; }
+    .row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid #EDEDEA; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #fff; display: flex; flex-direction: column; overflow: hidden;">
+  <header style="display: flex; align-items: baseline; justify-content: space-between; padding: 22px 20px 12px; flex-shrink: 0;">
+    <div style="display: flex; align-items: baseline; gap: 8px;">
+      <span style="font-size: 26px; font-weight: 700; letter-spacing: -0.03em;">챙고</span>
+      <span class="mono" style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: #8A8A85;">CHAENGO</span>
+    </div>
+    <span style="font-size: 13px; color: #5C5C5C;">9월 18일 금</span>
+  </header>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 20px; padding: 4px 20px 0; overflow: hidden;">
+    <section style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 13px; font-weight: 600; color: #5C5C5C; letter-spacing: 0.02em;">진행 중</span>
+        <span style="font-size: 12px; color: #8A8A85;">출발까지 8일</span>
+      </div>
+      <a href="S03_TripCheck.dc.html" style="display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: 16px; background: #111; color: #fff;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em;">가을 감성캠핑</span>
+            <span style="font-size: 13px; color: #B5B5B0;">9월 26일 – 27일 · 감성캠핑 세트</span>
+          </div>
+          <span style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #3A3A38; display: flex; align-items: center; justify-content: center; color: #fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg></span>
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+          <span class="mono" style="font-size: 40px; font-weight: 600; letter-spacing: -0.03em; line-height: 1;">12<span style="font-size: 22px; color: #8A8A85; font-weight: 500;">/34</span></span>
+          <span style="font-size: 13px; color: #B5B5B0;">22개 남음</span>
+        </div>
+        <div style="height: 6px; border-radius: 3px; background: #2C2C2A; display: flex;"><div style="width: 35%; height: 6px; border-radius: 3px; background: #4FBF84;"></div></div>
+      </a>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span style="font-size: 12px; color: #5C5C5C; width: 62px;">아직 안 챙김</span>
+        <span class="mini"><svg width="26" height="26" viewBox="0 0 512 512" fill="currentColor"><path d="M155.268 19.918c-10.28.078-20.632 4.474-20.96 13.115-.023 12.594 10.636 14.963 20.954 14.824 9.236.413 22.5-4.293 20.496-15.117.015-8.65-10.2-12.9-20.49-12.822zm206.502 6.58L345.46 45.34l-37.456 9.61 26.19 22.443 6.318 22.382 33.783-9.103 44.168 8.685 40.63-15.732-5.312-14.355 25.42-9.66-28.114-13.124-6.17-19.697-42.19 7.25L361.77 26.5zM193.752 35.81c1.195 21.554-22.075 29.942-38.3 30.045-16.423.105-39.028-7.878-39.15-29.91-6.35.916-13.206 1.983-20.894 3.235 4.393 4.827 8.22 10.667 11.422 17.105 8.723 17.536 13.724 40.668 13.68 66.14-.044 25.474-5.123 48.604-13.906 66.138-3.223 6.43-7.066 12.268-11.47 17.09 18.354 6.3 94.374 11.717 147.807-3.594 7.364-2.153 16.48-6.777 23.693-21.175 7.213-14.398 12.038-35.29 12.078-58.436.04-23.147-4.713-44.038-11.876-58.438-7.163-14.4-16.02-20.17-23.62-21.18-17.46-3.04-32.922-4.648-49.462-7.02zM67.79 43.57c-7.24 0-15.85 6.49-22.995 20.75-7.144 14.26-11.957 35.05-11.996 58.096-.04 23.045 4.7 43.84 11.796 58.102 7.094 14.26 15.683 20.75 22.922 20.752 7.238 0 15.852-6.487 22.996-20.747 7.143-14.258 11.956-35.05 11.996-58.096.015-8.744-.58-17.176-1.89-25.026-.472-2.84-20.153 12.424-20.153 12.424S97.97 84.32 97.34 82.04c-1.83-6.617-4.077-12.59-6.627-17.716C83.618 50.062 75.028 43.57 67.79 43.568zm380.507 62.68l-27.887 11.836-15.238-2.996.314 194.21 43.106-21.566-.295-181.484zm-73.365 2.895l-31.21 8.408.57 163.632 43.19 26.552-.316-196.185-12.234-2.407zM133.972 229.12l-.41 239.19c-.015 7.678 2.53 12.29 6.24 15.596 3.707 3.308 9.004 5.164 14.432 5.164 5.428 0 10.74-1.854 14.47-5.168 3.728-3.314 6.293-7.938 6.306-15.615l.408-239.074c-14.494 1.255-26.855 1.226-41.447-.092zm214.624 75.837l46.375 187.098-7.41-137.502-.04-25.668-38.924-23.928zm96.166 4.82l-39.242 19.63.04 25.116-10.525 137.56 49.727-182.306z"/></svg></span>
+        <span class="mini"><svg width="26" height="26" viewBox="0 0 48 48" fill="currentColor"><path d="M7 20a17 8 0 0134 0v14a6 6 0 01-6 6H13a6 6 0 01-6-6z"></path><rect x="19" y="9" width="10" height="6" rx="1.5"></rect><rect x="22" y="5" width="4" height="5" rx="1"></rect><path d="M7 26h34v8H7z" opacity="0.4"></path><path d="M20 30c2-3 4-3 4 0 0-3 2-3 4 0" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></span>
+        <span class="mini"><svg width="26" height="26" viewBox="0 0 512 512" fill="currentColor"><path d="M256 100c-8 0-16 4-32 12l10.848 32.543C179.665 147.226 112.76 160.04 98.68 183h314.625c-7.012-11.422-27.093-20.334-52.305-26.738V135h-18v17.266c-21.203-4.107-44.4-6.68-65.848-7.723L288 112c-16-8-24-12-32-12zM96 201v14H55v18h41v151c0 16 16 32 32 32h256c16 0 32-16 32-32V233h41v-18h-41v-14H96z"/></svg></span>
+        <span class="mini"><svg width="26" height="26" viewBox="0 0 512 512" fill="currentColor"><path d="M256 24c-10.1 0-19.2 1.92-26.7 5.64C221.9 33.35 215 39.72 215 49s6.9 15.65 14.3 19.36c5.2 2.58 11.2 4.27 17.7 5.08v11.28h18V73.44c6.5-.81 12.5-2.5 17.7-5.08C290.1 64.65 297 58.28 297 49s-6.9-15.65-14.3-19.36C275.2 25.92 266.1 24 256 24zm0 18c7.6 0 14.4 1.66 18.6 3.74 3.3 1.63 4.1 2.97 4.3 3.26.1-.1.1-.1.1 0s0 .1-.1 0c-.2.29-1 1.63-4.3 3.26-4.2 2.08-11 3.74-18.6 3.74-7.6 0-14.4-1.66-18.6-3.74-3.3-1.63-4.1-2.97-4.3-3.26-.1.1-.1.1-.1 0s0-.1.1 0c.2-.29 1-1.63 4.3-3.26 4.2-2.08 11-3.74 18.6-3.74zm-40.9 60.7L203.4 152h105.2l-11.7-49.3zm-18.9 1.7c-6.7.3-13.2.8-19.5 1.7-14.9 2.1-28.9 6.4-39.1 16.5-3.1 3.2-3.9 5.8-5.2 9.3-1.3 3.5-2.5 7.7-3.8 12.6-2.4 9.8-4.9 22.6-7.5 37.5-5 29.8-10 67.9-14.1 106.1-4 38.1-7 76.2-7.99 106.1-.51 14.9-.53 27.7.13 37.7.33 5 .82 9.2 1.56 12.9.8 3.7 1.3 6.9 4.9 10.6 7.1 7 15.4 11 24 13.3l6.8-16.9c-6.9-1.5-12.5-4-17.3-8.5-.1-.4-.5-1.1-.8-2.2-.4-2.3-.9-5.9-1.2-10.4-.6-8.9-.6-21.3-.1-35.9 1-29.1 4-67 8-104.9 3.9-37.8 8.9-75.7 13.9-104.9 2.4-14.6 4.9-27.1 7.2-36.1 1.1-4.5 2.2-8.2 3.2-10.7.6-1.8 1.4-3 1.5-3.1 5.9-5.7 15.7-9.4 28.5-11.2 3.9-.6 8.2-1 12.5-1.2zm119.6 0l4.3 18.3c4.4.2 8.6.6 12.6 1.2 12.8 1.8 22.6 5.5 28.5 11.2.1.1.9 1.3 1.5 3.1 1 2.5 2.1 6.2 3.2 10.7 2.3 9 4.8 21.5 7.2 36.1 5 29.2 10 67.1 13.9 104.9 4 37.9 7 75.8 8 104.9.5 14.6.5 27-.1 35.9-.3 4.5-.8 8.1-1.2 10.4-.3 1.1-.7 1.8-.8 2.2-4.8 4.5-10.4 7-17.3 8.5l6.8 16.9c8.6-2.3 16.9-6.3 24-13.3 3.6-3.7 4.1-6.9 4.9-10.6.7-3.7 1.2-7.9 1.6-12.9.6-10 .6-22.8.1-37.7-1-29.9-4-68-8-106.1-4.1-38.2-9.1-76.3-14.1-106.1-2.6-14.9-5.1-27.7-7.5-37.5-1.3-4.9-2.5-9.1-3.8-12.6-1.3-3.5-2.1-6.1-5.2-9.3-10.2-10.1-24.2-14.4-39.1-16.5-6.3-.9-12.9-1.4-19.5-1.7zM213.2 170c-2.9 4.9-11.6 19.8-21.6 41.1 21.9 10.3 43.8 25.6 64.4 42.7 20.7-17.1 42.5-32.4 64.4-42.7-10-21.3-18.7-36.2-21.6-41.1zm-28.8 57.7c-10 24.5-17.6 51.3-15.5 68.2 1 7.7 7.3 19.6 15.1 31 15.6-19.6 35.7-41.2 58.1-61.2-18.9-15.4-38.9-28.9-57.7-38zm143.2 0c-18.8 9.2-38.8 22.6-57.7 38 22.4 20.1 42.5 41.7 58.1 61.2 7.8-11.4 14.1-23.3 15.1-31 2.1-16.9-5.5-43.7-15.5-68.2zM256 277.5c-23.7 21-45.2 44.2-60.7 64.2 7.8 9.4 13.9 15.6 16.5 18.3h88.4c2.6-2.7 8.7-8.9 16.5-18.3-15.5-19.9-37-43.3-60.7-64.2zM225.4 378c2.3 4.8 3.6 9.8 3.6 15 0 5.2-1.3 10.2-3.6 15h61.2c-2.3-4.8-3.6-9.8-3.6-15 0-5.2 1.3-10.2 3.6-15zm-59.3 48l-24.8 62h229.4l-24.8-62z"/></svg></span>
+        <span class="mini" style="border-style: dashed; font-size: 12px; color: #5C5C5C; font-weight: 600;">+18</span>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; flex-grow: 1; overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 6px;">
+        <span style="font-size: 13px; font-weight: 600; color: #5C5C5C; letter-spacing: 0.02em;">완료</span>
+        <span class="mono" style="font-size: 12px; color: #8A8A85;">7</span>
+      </div>
+      <div class="row">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <span style="font-size: 16px; font-weight: 600;">여름 가족캠핑</span>
+          <span style="font-size: 13px; color: #5C5C5C;">8월 14일 – 16일 · <span class="mono">31/31</span></span>
+        </div>
+        <a href="S06_SetEdit.dc.html" style="height: 36px; padding: 0 14px; border-radius: 18px; border: 1.5px solid #D6D6D2; font-size: 13px; font-weight: 600; display: flex; align-items: center;">세트로 저장</a>
+      </div>
+      <div class="row">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <span style="font-size: 16px; font-weight: 600;">7월 솔캠</span>
+          <span style="font-size: 13px; color: #5C5C5C;">7월 5일 – 6일 · <span class="mono">21/22</span></span>
+        </div>
+        <a href="S06_SetEdit.dc.html" style="height: 36px; padding: 0 14px; border-radius: 18px; border: 1.5px solid #D6D6D2; font-size: 13px; font-weight: 600; display: flex; align-items: center;">세트로 저장</a>
+      </div>
+      <div class="row">
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <span style="font-size: 16px; font-weight: 600;">현충일 연박</span>
+          <span style="font-size: 13px; color: #5C5C5C;">6월 5일 – 7일 · <span class="mono">38/38</span></span>
+        </div>
+        <span style="height: 36px; padding: 0 14px; border-radius: 18px; background: #F4F4F2; font-size: 13px; font-weight: 500; color: #8A8A85; display: flex; align-items: center;">저장됨</span>
+      </div>
+    </section>
+
+    <a href="S02_TripCreate.dc.html" style="height: 56px; border-radius: 14px; background: #fff; border: 1.5px solid #111; color: #111; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 600; margin-bottom: 12px; flex-shrink: 0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"></path></svg>새 트립</a>
+  </div>
+
+  <nav class="tabbar">
+    <a class="tab on" href="S01_Home.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="4"></rect><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>트립</a>
+    <a class="tab" href="S05_SetList.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>세트</a>
+    <a class="tab" href="S07_ItemList.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect></svg>창고</a>
+    <a class="tab" href="S09_Settings.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"></path></svg>설정</a>
+  </nav>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

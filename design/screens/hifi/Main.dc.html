@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: "IBM Plex Sans KR", "Pretendard", -apple-system, "Apple SD Gothic Neo", sans-serif; background: #F4F4F2; color: #111111; }
+    a { color: #157A48; } a:hover { color: #0F5C36; }
+    .mono { font-family: "IBM Plex Mono", "SF Mono", Menlo, monospace; }
+    .sw { height: 64px; border-radius: 10px; display: flex; align-items: flex-end; padding: 8px; box-sizing: border-box; font-size: 11px; font-family: "IBM Plex Mono", monospace; }
+    .tile { width: 76px; height: 76px; border-radius: 16px; border: 1.5px solid #D6D6D2; background: #fff; display: flex; align-items: center; justify-content: center; box-sizing: border-box; position: relative; }
+    .tile.done { background: #157A48; border-color: #157A48; color: #fff; }
+    .tile.skip { border-style: dashed; opacity: 0.4; }
+    .tile.in { border: 2px solid #111111; background: #F4F4F2; }
+    .tile.out { border: 1.5px dashed #C9C9C4; color: #8A8A85; }
+    .cap { font-size: 12px; color: #5C5C5C; }
+  </style>
+</helmet>
+<div style="width: 620px; height: 844px; box-sizing: border-box; padding: 32px; display: flex; flex-direction: column; gap: 28px; background: #F4F4F2;">
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="display: flex; align-items: baseline; gap: 10px;">
+      <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.03em;">챙고</span>
+      <span class="mono" style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #5C5C5C;">CHAENGO</span>
+    </div>
+    <div style="font-size: 14px; color: #5C5C5C;">스타일 타일 — 밝고 건조한 유틸. 백색 바탕, 잉크 블랙, 포인트 1색(그린 = 챔김).</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="cap">색</div>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px;">
+      <div class="sw" style="background: #FFFFFF; border: 1px solid #E4E4E0; color: #5C5C5C;">FFFFFF 바탕</div>
+      <div class="sw" style="background: #F4F4F2; border: 1px solid #E4E4E0; color: #5C5C5C;">F4F4F2 면</div>
+      <div class="sw" style="background: #D6D6D2; color: #111;">D6D6D2 선</div>
+      <div class="sw" style="background: #5C5C5C; color: #fff;">5C5C5C 보조</div>
+      <div class="sw" style="background: #111111; color: #fff;">111111 잉크</div>
+      <div class="sw" style="background: #157A48; color: #fff;">157A48 챔김</div>
+    </div>
+    <div class="cap">경고·삭제만 <span style="color: #B42318; font-weight: 600;">B42318</span>. 그 외 색 없음.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="cap">글자</div>
+    <div style="background: #fff; border-radius: 12px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; border: 1px solid #E4E4E0;">
+      <div style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em;">화면 제목 22 / 700 — IBM Plex Sans KR</div>
+      <div style="font-size: 16px; font-weight: 600;">카드 제목 16 / 600</div>
+      <div style="font-size: 15px;">본문 15 / 400. 아이템 이름은 12 / 500으로 타일 아래.</div>
+      <div style="font-size: 13px; color: #5C5C5C;">보조 13 / 400, 5C5C5C — 백색 위 대비 7.0:1</div>
+      <div style="display: flex; align-items: baseline; gap: 12px;"><span class="mono" style="font-size: 32px; font-weight: 600; letter-spacing: -0.02em;">12<span style="color: #5C5C5C; font-weight: 500;">/34</span></span><span class="cap">숫자·진행률·카운트는 전부 IBM Plex Mono</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="cap">타일 상태 — S03 트립 체크 (챔김 여부)</div>
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px;"><div class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L12 4l9 16H3z"></path><path d="M12 20v-7"></path></svg></div><span style="font-size: 12px; font-weight: 500;">미챔김</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px;"><div class="tile done"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L12 4l9 16H3z"></path><path d="M12 20v-7"></path></svg><span style="position: absolute; top: -6px; right: -6px; width: 22px; height: 22px; border-radius: 50%; background: #111; color: #fff; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5 9-10"></path></svg></span></div><span style="font-size: 12px; font-weight: 500;">챔김</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px;"><div class="tile skip"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L12 4l9 16H3z"></path><path d="M12 20v-7"></path></svg></div><span style="font-size: 12px; font-weight: 500; text-decoration: line-through; color: #8A8A85;">제외</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px;"><div class="tile"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14"></path><path d="M8 7l4-4 4 4"></path><path d="M9 17l3 4 3-4"></path></svg><span class="mono" style="position: absolute; top: -6px; right: -6px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; background: #fff; border: 1.5px solid #111; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">12</span></div><span style="font-size: 12px; font-weight: 500;">수량 2+</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="cap">타일 상태 — S06 세트 편집 (포함 여부). S03과 의도적으로 다른 문법.</div>
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px;"><div class="tile in"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L12 4l9 16H3z"></path><path d="M12 20v-7"></path></svg></div><span style="font-size: 12px; font-weight: 600;">담김</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 90px;"><div class="tile out"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L12 4l9 16H3z"></path><path d="M12 20v-7"></path></svg></div><span style="font-size: 12px; font-weight: 500; color: #8A8A85;">안 담김</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="cap">버튼 · 칩</div>
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <button style="height: 52px; padding: 0 22px; border-radius: 14px; border: none; background: #111; color: #fff; font: inherit; font-size: 16px; font-weight: 600;">주요 동작</button>
+      <button style="height: 52px; padding: 0 22px; border-radius: 14px; border: 1.5px solid #111; background: #fff; color: #111; font: inherit; font-size: 16px; font-weight: 600;">보조 동작</button>
+      <span style="height: 34px; padding: 0 14px; border-radius: 17px; background: #111; color: #fff; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center;">선택 칩</span>
+      <span style="height: 34px; padding: 0 14px; border-radius: 17px; border: 1.5px solid #D6D6D2; color: #111; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center;">칩</span>
+      <span style="font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: #E9E9E6; color: #111; letter-spacing: 0.02em;">기본</span>
+    </div>
+    <div class="cap">모서리: 타일 16 · 카드 16 · 버튼 14 · 칩 17. 그림자 없음, 선(1px E4E4E0)으로 구분.</div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":620,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

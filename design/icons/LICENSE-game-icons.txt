@@ -1,0 +1,7 @@
+Icons in this folder marked "game-icons.net" are from https://game-icons.net
+Authors: Delapouite (https://delapouite.com), Lorc (https://lorcblog.blogspot.com), sbed (https://opengameart.org/content/95-game-icons)
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0) https://creativecommons.org/licenses/by/3.0/
+Modification: background removed, fill changed to a single color, no shape changes.
+
+Required attribution in-app (Settings > Info):
+"Icons by Delapouite, Lorc, sbed — game-icons.net (CC BY 3.0)"

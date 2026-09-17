@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4F0; color: #1F1F1F; }
+    a { color: #2F6F6B; text-decoration: none; } a:hover { color: #1F4F4C; }
+    .phone { width: 390px; height: 844px; box-sizing: border-box; background: #fff; border: 2px solid #1F1F1F; border-radius: 28px; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+    .appbar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid #D9D8D2; font-size: 17px; font-weight: 700; flex-shrink: 0; }
+    .screen { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px; overflow: hidden; }
+    .tabbar { height: 64px; border-top: 1px solid #D9D8D2; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); flex-shrink: 0; }
+    .tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; color: #6B6B66; }
+    .tab.on { color: #1F1F1F; font-weight: 700; }
+    .sec { font-size: 12px; color: #6B6B66; font-weight: 600; display: flex; align-items: center; gap: 6px; padding-top: 6px; }
+    .group { border: 1.5px solid #1F1F1F; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border-top: 1px solid #EDECE7; font-size: 15px; font-weight: 600; min-height: 52px; box-sizing: border-box; }
+    .row:first-child { border-top: none; }
+    .sub { font-size: 12px; color: #6B6B66; font-weight: 500; }
+    .badge { width: 20px; height: 20px; border-radius: 50%; background: #2F6F6B; color: #fff; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .spec { width: 510px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; padding: 4px 0; }
+    .spec h2 { margin: 0; font-size: 22px; }
+    .meta { font-size: 13px; color: #6B6B66; display: flex; flex-direction: column; gap: 4px; }
+    .spec table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .spec th, .spec td { border-top: 1px solid #D9D8D2; padding: 8px 6px; text-align: left; vertical-align: top; line-height: 1.45; }
+    .spec th { font-size: 12px; color: #6B6B66; font-weight: 600; }
+    .note { font-size: 12px; color: #6B6B66; line-height: 1.5; border-top: 1px solid #D9D8D2; padding-top: 10px; }
+  </style>
+</helmet>
+<div style="width: 940px; height: 844px; box-sizing: border-box; display: flex; gap: 40px;">
+  <div class="phone">
+    <header class="appbar">설정</header>
+    <div class="screen">
+      <div class="sec">데이터</div>
+      <div class="group">
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;"><span class="badge">1</span><div style="display: flex; flex-direction: column; gap: 2px;">백업 파일 내보내기<span class="sub">아이템·세트·트립 전체, JSON</span></div></div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg></div>
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;"><span class="badge">2</span><div style="display: flex; flex-direction: column; gap: 2px;">백업 파일 가져오기<span class="sub">현재 데이터를 덮어씁니다</span></div></div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg></div>
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;"><span class="badge">3</span><div style="display: flex; flex-direction: column; gap: 2px;"><span style="color: #B42318;">전체 초기화</span><span class="sub">기본 아이템·기본 세트만 남김</span></div></div></div>
+      </div>
+
+      <div class="sec">아이템</div>
+      <div class="group">
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;"><span class="badge">4</span>숨김 아이템 보기</div><span class="sub">3개</span></div>
+      </div>
+
+      <div class="sec">체크 화면</div>
+      <div class="group">
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;"><span class="badge">5</span>체크 중 화면 켜짐 유지</div><div style="width: 48px; height: 28px; border-radius: 14px; background: #1F1F1F; display: flex; justify-content: flex-end; padding: 3px; box-sizing: border-box;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #fff;"></div></div></div>
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;">탭 시 진동</div><div style="width: 48px; height: 28px; border-radius: 14px; background: #1F1F1F; display: flex; justify-content: flex-end; padding: 3px; box-sizing: border-box;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #fff;"></div></div></div>
+      </div>
+
+      <div class="sec">정보</div>
+      <div class="group">
+        <div class="row"><div style="display: flex; align-items: center; gap: 8px;"><span class="badge">6</span>버전</div><span class="sub">0.1.0 (pilot)</span></div>
+        <div class="row">기본 아이템 DB<span class="sub">v1 · 96개</span></div>
+        <div class="row">피드백 보내기<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg></div>
+      </div>
+    </div>
+    <nav class="tabbar">
+      <a class="tab" href="S01_TripList.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 12l3 3 5-6"></path></svg>트립</a>
+      <a class="tab" href="S05_SetList.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>세트</a>
+      <a class="tab" href="S07_ItemList.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>아이템</a>
+      <a class="tab on" href="S09_Settings.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"></path></svg>설정</a>
+    </nav>
+  </div>
+
+  <aside class="spec">
+    <div class="meta"><span>S09 · 하단 탭 4</span></div>
+    <h2>설정</h2>
+    <div class="meta">
+      <span>진입: 하단 탭 [설정]</span>
+      <span>목적: 서버 없는 구조에서 데이터 보존 수단 제공, 파일럿 피드백 수집</span>
+    </div>
+    <table>
+      <tr><th style="width: 34px;">No</th><th style="width: 120px;">구성 요소</th><th>설명</th></tr>
+      <tr><td>1</td><td>내보내기</td><td>OS 공유 시트로 JSON 저장(파일 앱·메신저 등). 파일명 campcheck-YYYYMMDD.json. 스키마 버전 포함</td></tr>
+      <tr><td>2</td><td>가져오기</td><td>파일 피커. 스키마 버전 불일치 시 차단. 덮어쓰기 확인 다이얼로그 2단계</td></tr>
+      <tr><td>3</td><td>전체 초기화</td><td>"초기화" 직접 타이핑 확인. 기본 아이템·기본 세트 복원, 커스텀·세트·트립 삭제</td></tr>
+      <tr><td>4</td><td>숨김 아이템</td><td>S07에서 숨긴 기본 아이템 목록, 행 탭으로 복구</td></tr>
+      <tr><td>5</td><td>체크 화면 옵션</td><td>화면 켜짐 유지(기본 ON), 탭 시 진동(기본 ON). S03에만 적용</td></tr>
+      <tr><td>6</td><td>정보</td><td>앱 버전, 기본 아이템 DB 버전·개수(아이콘 커버리지 확인용). [피드백 보내기] = 메일 앱 열기, 본문에 버전·기기 정보 자동 첨부</td></tr>
+    </table>
+    <div class="note">파일럿 지표 수집은 요구사항 정의서에서 미결. 익명 수집을 도입하면 이 화면에 "사용 통계 보내기" 토글이 추가되고 첫 실행 시 동의 화면 1장이 생김. 결정 전까지 [피드백 보내기]가 유일한 수집 경로.</div>
+  </aside>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":940,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

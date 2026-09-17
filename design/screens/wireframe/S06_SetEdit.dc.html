@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4F0; color: #1F1F1F; }
+    a { color: #2F6F6B; text-decoration: none; } a:hover { color: #1F4F4C; }
+    .phone { width: 390px; height: 844px; box-sizing: border-box; background: #fff; border: 2px solid #1F1F1F; border-radius: 28px; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+    .appbar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid #D9D8D2; font-size: 17px; font-weight: 700; flex-shrink: 0; }
+    .screen { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 12px 16px; overflow: hidden; }
+    .field { height: 44px; border: 1.5px solid #1F1F1F; border-radius: 10px; padding: 0 14px; font-size: 15px; box-sizing: border-box; width: 100%; background: #fff; color: #1F1F1F; font-family: inherit; }
+    .cat { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; font-weight: 700; padding-top: 2px; }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .tile { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; text-align: center; color: #6B6B66; }
+    .tile.in { color: #1F1F1F; font-weight: 600; }
+    .ico { width: 64px; height: 64px; border-radius: 14px; border: 1.5px dashed #B8B7B1; background: #fff; display: flex; align-items: center; justify-content: center; box-sizing: border-box; position: relative; }
+    .ico.in { border: 2px solid #1F1F1F; background: #F5F4F0; }
+    .qty { position: absolute; top: -6px; right: -6px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: #1F1F1F; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+    .btn { height: 48px; border: 1.5px solid #1F1F1F; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; background: #fff; }
+    .primary { background: #1F1F1F; color: #fff; }
+    .badge { width: 20px; height: 20px; border-radius: 50%; background: #2F6F6B; color: #fff; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .spec { width: 510px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; padding: 4px 0; }
+    .spec h2 { margin: 0; font-size: 22px; }
+    .meta { font-size: 13px; color: #6B6B66; display: flex; flex-direction: column; gap: 4px; }
+    .spec table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .spec th, .spec td { border-top: 1px solid #D9D8D2; padding: 8px 6px; text-align: left; vertical-align: top; line-height: 1.45; }
+    .spec th { font-size: 12px; color: #6B6B66; font-weight: 600; }
+    .note { font-size: 12px; color: #6B6B66; line-height: 1.5; border-top: 1px solid #D9D8D2; padding-top: 10px; }
+  </style>
+</helmet>
+<div style="width: 940px; height: 844px; box-sizing: border-box; display: flex; gap: 40px;">
+  <div class="phone">
+    <header class="appbar" style="justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;"><a href="S05_SetList.dc.html" aria-label="뒤로" style="color: #1F1F1F; display: flex;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a>세트 편집</div>
+      <a href="S05_SetList.dc.html" style="font-size: 15px; font-weight: 700; color: #1F1F1F;">저장</a>
+    </header>
+    <div class="screen">
+      <div style="display: flex; align-items: center; gap: 8px;"><span class="badge">1</span><input class="field" aria-label="세트 이름" value="감성캠핑"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+        <span style="display: flex; align-items: center; gap: 6px;"><span class="badge">2</span><b>34개</b> 담김</span>
+        <span style="color: #6B6B66;">아이콘 탭 = 담기 / 빼기</span>
+      </div>
+
+      <div class="cat"><span><span class="badge" style="margin-right: 6px;">3</span>텐트 · 타프</span><span style="color: #6B6B66; font-weight: 600;">4 / 6</span></div>
+      <div class="grid">
+        <div class="tile in"><div class="ico in"></div>텐트</div>
+        <div class="tile in"><div class="ico in"></div>그라운드시트</div>
+        <div class="tile in"><div class="ico in"><span class="qty">12</span><span class="badge" style="position: absolute; left: -6px; top: -6px;">4</span></div>팩</div>
+        <div class="tile in"><div class="ico in"></div>타프</div>
+        <div class="tile"><div class="ico"></div>쉘터</div>
+        <div class="tile"><div class="ico"></div>이너텐트</div>
+      </div>
+
+      <div class="cat"><span>침구</span><span style="color: #6B6B66; font-weight: 600;">3 / 5</span></div>
+      <div class="grid">
+        <div class="tile in"><div class="ico in"><span class="qty">2</span></div>침낭</div>
+        <div class="tile in"><div class="ico in"><span class="qty">2</span></div>매트</div>
+        <div class="tile"><div class="ico"></div>야전침대</div>
+        <div class="tile in"><div class="ico in"></div>베개</div>
+        <div class="tile"><div class="ico"></div>전기장판</div>
+      </div>
+
+      <div class="cat"><span>조명 · 전력</span><span style="color: #6B6B66; font-weight: 600;">5 / 7</span></div>
+      <div class="grid">
+        <div class="tile in"><div class="ico in"><span class="qty">3</span></div>랜턴</div>
+        <div class="tile in"><div class="ico in"></div>파워뱅크</div>
+        <div class="tile in"><div class="ico in"></div>릴선</div>
+        <div class="tile in"><div class="ico in"></div>스트링라이트</div>
+      </div>
+
+      <div style="flex-grow: 1;"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+        <a href="S05_SetList.dc.html" style="display: flex; align-items: center; gap: 6px; color: #B42318; font-weight: 600;"><span class="badge">5</span>세트 삭제</a>
+        <a href="S08_ItemEdit.dc.html" style="font-weight: 600;">+ 커스텀 아이템</a>
+      </div>
+    </div>
+  </div>
+
+  <aside class="spec">
+    <div class="meta"><span>S06 · 2레벨 · 풀스크린</span></div>
+    <h2>세트 편집</h2>
+    <div class="meta">
+      <span>진입: S05 [편집]·[복제]·[새 세트] / S01 [세트로 저장]</span>
+      <span>목적: 전체 아이템 중 이 세트에 담을 것을 아이콘 탭으로 고름</span>
+    </div>
+    <table>
+      <tr><th style="width: 34px;">No</th><th style="width: 120px;">구성 요소</th><th>설명</th></tr>
+      <tr><td>1</td><td>세트 이름</td><td>필수. 복제 진입 시 "○○ 복사", 트립에서 저장 시 트립명이 기본값</td></tr>
+      <tr><td>2</td><td>담김 개수</td><td>탭마다 즉시 갱신. 우측에 조작 힌트 고정 문구</td></tr>
+      <tr><td>3</td><td>카테고리 헤더</td><td>카테고리 내 담김/전체. 숨김 처리된 아이템은 전체에서 제외</td></tr>
+      <tr><td>4</td><td>아이템 타일</td><td>전체 아이템(기본+커스텀) 노출. <b>담김</b> = 실선·배경, <b>안 담김</b> = 점선·회색 글자. 탭 = 담기/빼기 토글. 롱프레스 = 수량 스테퍼(1–99). 수량 2 이상이면 뱃지</td></tr>
+      <tr><td>5</td><td>삭제 · 커스텀</td><td>[세트 삭제]: 기본 세트·사용 중 세트는 비활성, 확인 다이얼로그. [+ 커스텀 아이템] → S08, 저장 후 이 화면으로 복귀하며 자동 담김</td></tr>
+    </table>
+    <div class="note">S03과 같은 타일 그리드를 쓰되 상태 의미가 다르다(S03 = 챔김 여부, S06 = 포함 여부). 스타일을 의도적으로 다르게 잡아(채움 vs 점선) 두 화면을 헷갈리지 않게 한다. 저장 전 뒤로가기 → 변경 폐기 확인.</div>
+  </aside>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":940,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

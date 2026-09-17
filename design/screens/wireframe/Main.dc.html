@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4F0; color: #1F1F1F; }
+    a { color: #2F6F6B; } a:hover { color: #1F4F4C; }
+    .node { fill: #FFFFFF; stroke: #1F1F1F; stroke-width: 1.5; }
+    .node-sub { fill: #FFFFFF; stroke: #1F1F1F; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .id { font-size: 11px; fill: #6B6B66; font-weight: 600; }
+    .nm { font-size: 15px; fill: #1F1F1F; font-weight: 700; }
+    .lb { font-size: 11px; fill: #2F6F6B; font-weight: 600; }
+    .ar { stroke: #1F1F1F; stroke-width: 1.5; fill: none; marker-end: url(#arw); }
+    .grp { font-size: 12px; fill: #6B6B66; font-weight: 600; letter-spacing: 0.04em; }
+  </style>
+</helmet>
+<div style="width: 1200px; height: 640px; box-sizing: border-box; padding: 32px 40px; display: flex; flex-direction: column; gap: 16px;">
+  <div style="display: flex; align-items: baseline; gap: 16px;">
+    <h1 style="margin: 0; font-size: 24px;">캠프체크 화면 흐름도 (1차 파일럿)</h1>
+    <span style="font-size: 13px; color: #6B6B66;">하단 탭 4개 진입 · 실선 = 화면, 점선 = 바텀시트 · 화살표 라벨 = 이동 트리거</span>
+  </div>
+  <svg viewBox="0 0 1120 520" width="1120" height="520" xmlns="http://www.w3.org/2000/svg" aria-label="화면 흐름도">
+    <defs>
+      <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F1F1F"></path>
+      </marker>
+    </defs>
+
+    <text x="0" y="22" class="grp">하단 탭 (1레벨)</text>
+    <line x1="0" y1="32" x2="1120" y2="32" stroke="#D9D8D2" stroke-width="1"></line>
+
+    <rect x="0" y="50" width="200" height="72" rx="10" class="node"></rect>
+    <text x="16" y="72" class="id">S01</text>
+    <text x="16" y="98" class="nm">트립 목록 (홈)</text>
+
+    <rect x="500" y="50" width="200" height="72" rx="10" class="node"></rect>
+    <text x="516" y="72" class="id">S05</text>
+    <text x="516" y="98" class="nm">세트 목록</text>
+
+    <rect x="760" y="50" width="200" height="72" rx="10" class="node"></rect>
+    <text x="776" y="72" class="id">S07</text>
+    <text x="776" y="98" class="nm">아이템 목록</text>
+
+    <rect x="1000" y="50" width="120" height="72" rx="10" class="node"></rect>
+    <text x="1016" y="72" class="id">S09</text>
+    <text x="1016" y="98" class="nm">설정</text>
+
+    <text x="0" y="192" class="grp">2레벨</text>
+    <line x1="0" y1="202" x2="1120" y2="202" stroke="#D9D8D2" stroke-width="1"></line>
+
+    <rect x="0" y="240" width="200" height="72" rx="10" class="node"></rect>
+    <text x="16" y="262" class="id">S02</text>
+    <text x="16" y="288" class="nm">트립 생성</text>
+
+    <rect x="260" y="240" width="200" height="72" rx="10" class="node"></rect>
+    <text x="276" y="262" class="id">S03 · 핵심</text>
+    <text x="276" y="288" class="nm">트립 체크</text>
+
+    <rect x="500" y="240" width="200" height="72" rx="10" class="node"></rect>
+    <text x="516" y="262" class="id">S06</text>
+    <text x="516" y="288" class="nm">세트 편집</text>
+
+    <rect x="760" y="240" width="200" height="72" rx="10" class="node"></rect>
+    <text x="776" y="262" class="id">S08</text>
+    <text x="776" y="288" class="nm">아이템 추가/수정</text>
+
+    <text x="0" y="392" class="grp">3레벨 (시트)</text>
+    <line x1="0" y1="402" x2="1120" y2="402" stroke="#D9D8D2" stroke-width="1"></line>
+
+    <rect x="260" y="430" width="200" height="72" rx="10" class="node-sub"></rect>
+    <text x="276" y="452" class="id">S04</text>
+    <text x="276" y="478" class="nm">아이템 추가 시트</text>
+
+    <path d="M 100 122 L 100 240" class="ar"></path>
+    <text x="108" y="186" class="lb">+ 새 트립</text>
+
+    <path d="M 200 276 L 260 276" class="ar"></path>
+    <text x="206" y="268" class="lb">만들기</text>
+
+    <path d="M 170 122 L 330 240" class="ar"></path>
+    <text x="250" y="170" class="lb">진행 중 트립 탭</text>
+
+    <path d="M 360 312 L 360 430" class="ar"></path>
+    <text x="368" y="376" class="lb">+ 아이템</text>
+
+    <path d="M 460 276 L 500 276" class="ar"></path>
+    <text x="440" y="330" class="lb">완료 트립 → 세트로 저장</text>
+
+    <path d="M 600 122 L 600 240" class="ar"></path>
+    <text x="608" y="186" class="lb">세트 탭 / + 새 세트</text>
+
+    <path d="M 860 122 L 860 240" class="ar"></path>
+    <text x="868" y="186" class="lb">아이템 탭 / + 추가</text>
+
+    <path d="M 640 240 C 640 200, 760 200, 760 240" class="ar"></path>
+    <text x="654" y="212" class="lb">커스텀 아이템 만들기</text>
+  </svg>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":640}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

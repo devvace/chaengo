@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4F0; color: #1F1F1F; }
+    a { color: #2F6F6B; text-decoration: none; } a:hover { color: #1F4F4C; }
+    .phone { width: 390px; height: 844px; box-sizing: border-box; background: #fff; border: 2px solid #1F1F1F; border-radius: 28px; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+    .appbar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid #D9D8D2; font-size: 17px; font-weight: 700; flex-shrink: 0; }
+    .screen { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px; overflow: hidden; }
+    .box { border: 1.5px solid #1F1F1F; border-radius: 10px; padding: 12px; background: #fff; display: flex; flex-direction: column; gap: 8px; }
+    .field { height: 48px; border: 1.5px solid #1F1F1F; border-radius: 10px; padding: 0 14px; font-size: 15px; box-sizing: border-box; width: 100%; background: #fff; color: #1F1F1F; font-family: inherit; }
+    .label { font-size: 12px; color: #6B6B66; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .btn { height: 48px; border: 1.5px solid #1F1F1F; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; background: #fff; }
+    .primary { background: #1F1F1F; color: #fff; }
+    .radio { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #1F1F1F; border-radius: 10px; }
+    .dot { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #1F1F1F; flex-shrink: 0; box-sizing: border-box; }
+    .dot.on { border-width: 6px; }
+    .badge { width: 20px; height: 20px; border-radius: 50%; background: #2F6F6B; color: #fff; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .spec { width: 510px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; padding: 4px 0; }
+    .spec h2 { margin: 0; font-size: 22px; }
+    .meta { font-size: 13px; color: #6B6B66; display: flex; flex-direction: column; gap: 4px; }
+    .spec table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .spec th, .spec td { border-top: 1px solid #D9D8D2; padding: 8px 6px; text-align: left; vertical-align: top; line-height: 1.45; }
+    .spec th { font-size: 12px; color: #6B6B66; font-weight: 600; }
+    .note { font-size: 12px; color: #6B6B66; line-height: 1.5; border-top: 1px solid #D9D8D2; padding-top: 10px; }
+  </style>
+</helmet>
+<div style="width: 940px; height: 844px; box-sizing: border-box; display: flex; gap: 40px;">
+  <div class="phone">
+    <header class="appbar"><a href="S01_TripList.dc.html" aria-label="뒤로" style="color: #1F1F1F; display: flex;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a>새 트립</header>
+    <div class="screen">
+      <label class="label" for="tripName"><span class="badge">1</span>트립 이름</label>
+      <input id="tripName" class="field" value="가을 감성캠핑">
+
+      <div class="label"><span class="badge">2</span>날짜</div>
+      <div style="display: flex; gap: 8px;">
+        <input class="field" aria-label="시작일" value="2026-09-26">
+        <input class="field" aria-label="종료일" value="2026-09-27">
+      </div>
+
+      <div class="label" style="margin-top: 4px;"><span class="badge">3</span>세트 선택</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="radio"><span class="dot"></span><div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><span style="font-weight: 700;">기본 오토캠핑</span><span style="font-size: 12px; color: #6B6B66;">28개 · 기본 제공</span></div></div>
+        <div class="radio"><span class="dot"></span><div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><span style="font-weight: 700;">여름</span><span style="font-size: 12px; color: #6B6B66;">31개</span></div></div>
+        <div class="radio" style="border-width: 2px;"><span class="dot on"></span><div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><span style="font-weight: 700;">감성캠핑</span><span style="font-size: 12px; color: #6B6B66;">34개</span></div></div>
+        <div class="radio"><span class="dot"></span><div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><span style="font-weight: 700;">겨울</span><span style="font-size: 12px; color: #6B6B66;">38개</span></div></div>
+        <div class="radio" style="border-style: dashed;"><span class="dot"></span><span style="flex-grow: 1; color: #6B6B66;">세트 없이 빈 트립으로 시작</span></div>
+      </div>
+
+      <div style="flex-grow: 1;"></div>
+      <a href="S03_TripCheck.dc.html" class="btn primary"><span class="badge" style="background: #fff; color: #1F1F1F; margin-right: 8px;">4</span>트립 만들기</a>
+    </div>
+  </div>
+
+  <aside class="spec">
+    <div class="meta"><span>S02 · 2레벨 · 풀스크린</span></div>
+    <h2>트립 생성</h2>
+    <div class="meta">
+      <span>진입: S01 [새 트립]</span>
+      <span>목적: 세트를 골라 3탭 안에 체크 화면으로 진입</span>
+    </div>
+    <table>
+      <tr><th style="width: 34px;">No</th><th style="width: 120px;">구성 요소</th><th>설명</th></tr>
+      <tr><td>1</td><td>트립 이름</td><td>필수. 기본값 = "선택 세트명 + 월" (예: 감성캠핑 9월) 자동 채움, 수정 가능</td></tr>
+      <tr><td>2</td><td>날짜</td><td>시작·종료일. 선택 사항, 기본값 = 이번 주 토·일. 파일럿에서는 알림 등 날짜 기반 기능 없음(이력 표시용)</td></tr>
+      <tr><td>3</td><td>세트 선택</td><td>단일 선택 라디오. 세트명·아이템 수 표시. 마지막 사용 세트가 기본 선택. [세트 없이 시작] 선택 시 빈 트립 생성 후 S04로 바로 진입</td></tr>
+      <tr><td>4</td><td>트립 만들기</td><td>세트의 아이템·수량을 트립으로 복사(원본 세트와 분리) 후 → S03. 이름 미입력 시 비활성</td></tr>
+    </table>
+    <div class="note">복사 시점 = 이 버튼 탭 시점. 이후 세트를 수정해도 이 트립에는 반영되지 않음(요구사항 정의서 "세트 수정은 생성된 트립에 영향 없음").</div>
+  </aside>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":940,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

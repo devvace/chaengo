@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4F0; color: #1F1F1F; }
+    a { color: #2F6F6B; text-decoration: none; } a:hover { color: #1F4F4C; }
+    .phone { width: 390px; height: 844px; box-sizing: border-box; background: #fff; border: 2px solid #1F1F1F; border-radius: 28px; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+    .appbar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid #D9D8D2; font-size: 17px; font-weight: 700; flex-shrink: 0; }
+    .screen { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 12px 16px; overflow: hidden; }
+    .chip { height: 32px; padding: 0 12px; border: 1.5px solid #1F1F1F; border-radius: 16px; display: flex; align-items: center; font-size: 12px; font-weight: 600; background: #fff; gap: 4px; }
+    .chip.on { background: #1F1F1F; color: #fff; }
+    .cat { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; font-weight: 700; padding-top: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .tile { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; text-align: center; }
+    .ico { width: 72px; height: 72px; border-radius: 14px; border: 1.5px solid #9A9A94; background: #fff; display: flex; align-items: center; justify-content: center; box-sizing: border-box; position: relative; }
+    .ico.done { background: #1F1F1F; border-color: #1F1F1F; color: #fff; }
+    .ico.skip { border-style: dashed; opacity: 0.45; }
+    .qty { position: absolute; top: -6px; right: -6px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: #fff; border: 1.5px solid #1F1F1F; color: #1F1F1F; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+    .btn { height: 48px; border: 1.5px solid #1F1F1F; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; background: #fff; }
+    .primary { background: #1F1F1F; color: #fff; }
+    .badge { width: 20px; height: 20px; border-radius: 50%; background: #2F6F6B; color: #fff; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .spec { width: 510px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; padding: 4px 0; }
+    .spec h2 { margin: 0; font-size: 22px; }
+    .meta { font-size: 13px; color: #6B6B66; display: flex; flex-direction: column; gap: 4px; }
+    .spec table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .spec th, .spec td { border-top: 1px solid #D9D8D2; padding: 7px 6px; text-align: left; vertical-align: top; line-height: 1.45; }
+    .spec th { font-size: 12px; color: #6B6B66; font-weight: 600; }
+    .note { font-size: 12px; color: #6B6B66; line-height: 1.5; border-top: 1px solid #D9D8D2; padding-top: 10px; }
+    .lg { display: flex; gap: 14px; font-size: 12px; align-items: center; }
+    .sw { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #9A9A94; box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 940px; height: 844px; box-sizing: border-box; display: flex; gap: 40px;">
+  <div class="phone">
+    <header class="appbar" style="justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;"><a href="S01_TripList.dc.html" aria-label="뒤로" style="color: #1F1F1F; display: flex;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span class="badge">1</span>가을 감성캠핑</div>
+      <span style="font-size: 15px;">12 <span style="color: #6B6B66; font-weight: 500;">/ 34</span></span>
+    </header>
+    <div style="height: 4px; background: #E6E5DF; flex-shrink: 0;"><div style="width: 35%; height: 4px; background: #1F1F1F;"></div></div>
+    <div class="screen">
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span class="badge">2</span>
+        <span class="chip on">미챔김 우선</span>
+        <span class="chip">카테고리순</span>
+        <div style="flex-grow: 1;"></div>
+        <a href="S04_ItemAddSheet.dc.html" class="chip" aria-label="아이템 추가">+ 아이템</a>
+      </div>
+
+      <div class="cat"><span><span class="badge" style="margin-right: 6px;">3</span>텐트 · 타프</span><span style="color: #6B6B66; font-weight: 600;">2 / 4</span></div>
+      <div class="grid">
+        <div class="tile"><div class="ico done"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></div>텐트</div>
+        <div class="tile"><div class="ico done"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></div>그라운드시트</div>
+        <div class="tile"><div class="ico"><span class="badge">4</span><span class="qty">12</span></div>팩</div>
+        <div class="tile"><div class="ico skip"></div><span style="text-decoration: line-through; color: #6B6B66;">타프</span></div>
+      </div>
+
+      <div class="cat"><span>조리</span><span style="color: #6B6B66; font-weight: 600;">3 / 6</span></div>
+      <div class="grid">
+        <div class="tile"><div class="ico done"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></div>버너</div>
+        <div class="tile"><div class="ico"><span class="qty">2</span></div>가스</div>
+        <div class="tile"><div class="ico"></div>코펠</div>
+        <div class="tile"><div class="ico done"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></div>키친툴</div>
+        <div class="tile"><div class="ico"></div>커피세트</div>
+        <div class="tile"><div class="ico done"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></div>아이스박스</div>
+      </div>
+
+      <div class="cat"><span>조명 · 전력</span><span style="color: #6B6B66; font-weight: 600;">1 / 5</span></div>
+      <div class="grid">
+        <div class="tile"><div class="ico"><span class="qty">3</span></div>랜턴</div>
+        <div class="tile"><div class="ico done"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"></path></svg></div>파워뱅크</div>
+        <div class="tile"><div class="ico"></div>릴선</div>
+        <div class="tile"><div class="ico"></div>스트링라이트</div>
+      </div>
+
+      <div style="flex-grow: 1;"></div>
+      <a href="S01_TripList.dc.html" class="btn primary"><span class="badge" style="background: #fff; color: #1F1F1F; margin-right: 8px;">5</span>캠핑 완료</a>
+    </div>
+  </div>
+
+  <aside class="spec">
+    <div class="meta"><span>S03 · 2레벨 · 핵심 화면 · 화면 켜짐 유지</span></div>
+    <h2>트립 체크</h2>
+    <div class="meta">
+      <span>진입: S01 진행 중 카드 / S02 [트립 만들기]</span>
+      <span>목적: 트렁크 앞에서 한 손으로 아이콘을 탭해 챔김 여부를 기록</span>
+    </div>
+    <div class="lg">
+      <span class="sw"></span>미챔김
+      <span class="sw" style="background: #1F1F1F; border-color: #1F1F1F;"></span>챔김
+      <span class="sw" style="border-style: dashed; opacity: 0.45;"></span>제외(이번엔 안 가져감)
+    </div>
+    <table>
+      <tr><th style="width: 34px;">No</th><th style="width: 110px;">구성 요소</th><th>설명</th></tr>
+      <tr><td>1</td><td>앱바 + 진행</td><td>트립명, 챔김 n / 전체 m(제외 아이템은 m에서 빼고 계산), 아래 진행바. 스크롤해도 고정</td></tr>
+      <tr><td>2</td><td>정렬 · 추가</td><td>[미챔김 우선]: 미챔김 아이템을 각 카테고리 앞에 정렬. [카테고리순]: 세트 순서 그대로. [+ 아이템] → S04 바텀시트</td></tr>
+      <tr><td>3</td><td>카테고리 헤더</td><td>카테고리명 + 카테고리 내 챔김/전체. 헤더 탭 → 카테고리 접기/펴기</td></tr>
+      <tr><td>4</td><td>아이템 타일</td><td>72px 아이콘 + 이름 + 수량 뱃지(2개 이상일 때만). <b>탭</b> = 미챔김 ↔ 챔김 토글. <b>롱프레스</b> = 액션 시트(제외 / 수량 변경 / 트립에서 삭제). 제외 타일은 탭해도 상태 안 바뀜, 롱프레스로만 복귀</td></tr>
+      <tr><td>5</td><td>캠핑 완료</td><td>미챔김이 남아 있으면 "미챔김 n개가 있습니다" 확인 후 완료. 완료 시 트립 잠금(읽기 전용) → S01</td></tr>
+    </table>
+    <div class="note">비기능: 오프라인 전제, 화면 자동 꺼짐 방지(이 화면에서만), 타일 간격 10px 이상으로 오탭 방지. 체크 상태는 탭 즉시 저장(별도 저장 버튼 없음). 아이콘 미제작 아이템은 카테고리 아이콘으로 폴백.</div>
+  </aside>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":940,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
