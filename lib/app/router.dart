@@ -8,6 +8,7 @@ import '../features/inventory/inventory_page.dart';
 import '../features/inventory/item_edit_page.dart';
 import '../features/settings/hidden_items_page.dart';
 import '../features/settings/settings_page.dart';
+import '../features/splash/splash_page.dart';
 import '../features/sets/set_edit_page.dart';
 import '../features/sets/set_edit_state.dart';
 import '../features/sets/set_list_page.dart';
@@ -18,6 +19,8 @@ import '../widgets/app_tab_bar.dart';
 
 /// 경로 상수. 화면에서 문자열을 직접 쓰지 않는다.
 abstract final class Routes {
+  /// 앱 시작 시 GIF 스플래시. 끝나면 trips로 go().
+  static const splash = '/splash';
   static const trips = '/trips';
   static const sets = '/sets';
   static const inventory = '/inventory';
@@ -55,8 +58,12 @@ final _rootKey = GlobalKey<NavigatorState>();
 
 GoRouter buildRouter() => GoRouter(
   navigatorKey: _rootKey,
-  initialLocation: Routes.trips,
+  initialLocation: Routes.splash,
   routes: [
+    GoRoute(
+      path: Routes.splash,
+      builder: (context, state) => const SplashPage(),
+    ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, shell) => _TabShell(shell: shell),
       branches: [

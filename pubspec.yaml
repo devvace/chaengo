@@ -64,6 +64,8 @@ dev_dependencies:
   build_runner: ^2.16.1
   drift_dev: ^2.35.1
   riverpod_generator: ^4.0.9
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -76,6 +78,7 @@ flutter:
     - assets/icons/
     - assets/seed_items.json
     - assets/fonts/LICENSE-IBM-Plex-OFL.txt
+    - assets/brand/splash.gif
 
   fonts:
     - family: IBMPlexSansKR
@@ -94,3 +97,23 @@ flutter:
           weight: 500
         - asset: assets/fonts/IBMPlexMono-SemiBold.ttf
           weight: 600
+
+# 앱 아이콘. 갱신: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: assets/brand/logo.png
+  android: true
+  adaptive_icon_background: "#FFFFFF"
+  # 적응형 아이콘은 가운데 66%만 보이므로 logo.png에 흰 여백을 더한 파일을 쓴다.
+  # 로고가 바뀌면: sips -p 1880 1880 --padColor FFFFFF assets/brand/logo.png --out assets/brand/logo_adaptive_fg.png
+  adaptive_icon_foreground: assets/brand/logo_adaptive_fg.png
+  ios: true
+  remove_alpha_ios: true
+
+# 네이티브 런치 화면. 갱신: dart run flutter_native_splash:create
+# splash.gif가 흰 화면에서 시작하므로 여기도 흰 화면만 둔다(로고 없음).
+# Android 12+는 아이콘을 안 주면 OS가 앱 아이콘을 띄우므로 투명 이미지를 준다.
+flutter_native_splash:
+  color: "#FFFFFF"
+  android_12:
+    color: "#FFFFFF"
+    image: assets/brand/transparent.png
