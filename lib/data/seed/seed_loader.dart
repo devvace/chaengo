@@ -5,6 +5,7 @@ import 'package:flutter/services.dart' show AssetBundle, rootBundle;
 
 import '../../domain/models/item_category.dart';
 import '../database.dart';
+import 'built_in_icon_updates.dart';
 
 /// 시드 파일이 코드와 어긋났을 때 던진다. 조용히 넘어가면 아이콘 폴백이나
 /// 카테고리가 말없이 깨지므로, 개발 중에 바로 터지게 둔다.
@@ -30,13 +31,16 @@ class SeedLoader {
   final AppDatabase _db;
   final AssetBundle _bundle;
 
-  /// 앱 시작 시 호출한다. 아이템이 하나라도 있으면 아무것도 하지 않는다.
+  /// 앱 시작 시 새 DB는 시드하고, 기존 DB는 기본 아이콘 연결만 갱신한다.
   Future<void> ensureSeeded() async {
     final total = _db.items.id.count();
     final row = await (_db.selectOnly(
       _db.items,
     )..addColumns([total])).getSingle();
-    if ((row.read(total) ?? 0) > 0) return;
+    if ((row.read(total) ?? 0) > 0) {
+      await refreshBuiltInIcons(_db);
+      return;
+    }
     await seed();
   }
 

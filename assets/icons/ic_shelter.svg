@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="#111111"><path d="M3 19h18"></path><path d="M4 40V22l20-14 20 14v18z"></path><path d="M18 40V30h12v10z" opacity="0.4"></path><rect x="8" y="26" width="6" height="5" rx="1" opacity="0.4"></rect><rect x="34" y="26" width="6" height="5" rx="1" opacity="0.4"></rect><path d="M0 40h48v2H0z" opacity="0.4"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64" fill="#111111">
+<title>쉘터 — 개방된 전면과 높은 지붕</title>
+<path d="M3 30C9 22 17 13 28 10C41 12 53 20 61 29L44 33C39 23 34 17 28 14C21 17 15 23 12 30Z"/>
+<path d="M6 31H12L9 53H4ZM41 34H46L49 54H43ZM55 32L60 31L61 49L56 51Z"/>
+<path d="M48 52L60 48V52L49 56Z"/>
+<path d="M14 30C18 23 23 18 28 17C33 20 37 25 40 32L36 31C33 26 30 23 28 22C24 24 21 27 19 31Z" opacity=".4"/>
+</svg>

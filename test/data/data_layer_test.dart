@@ -65,9 +65,9 @@ void main() {
 
     test('아이콘이 null인 아이템은 카테고리 아이콘으로 폴백한다', () async {
       await loader.ensureSeeded();
-      final poles = await db.itemDao.findById('poles');
-      expect(poles!.iconKey, isNull);
-      expect(poles.glyph, SvgGlyph(ItemCategory.tent.iconKey));
+      final lines = await db.itemDao.findById('rope');
+      expect(lines!.iconKey, isNull);
+      expect(lines.glyph, SvgGlyph(ItemCategory.misc.iconKey));
 
       final tent = await db.itemDao.findById('tent');
       expect(tent!.glyph, const SvgGlyph('ic_tent'));

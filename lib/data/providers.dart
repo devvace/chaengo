@@ -33,7 +33,7 @@ SettingsDao settingsDao(Ref ref) => ref.watch(appDatabaseProvider).settingsDao;
 @Riverpod(keepAlive: true)
 SeedLoader seedLoader(Ref ref) => SeedLoader(ref.watch(appDatabaseProvider));
 
-/// 앱 시작 시 한 번 기다린다. 아이템이 이미 있으면 바로 끝난다.
+/// 앱 시작 시 시드 또는 기존 내장 아이템의 기본 아이콘 갱신을 기다린다.
 @Riverpod(keepAlive: true)
 Future<void> seedBootstrap(Ref ref) =>
     ref.watch(seedLoaderProvider).ensureSeeded();

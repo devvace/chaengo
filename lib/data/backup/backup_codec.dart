@@ -7,6 +7,7 @@ import '../../domain/models/item_category.dart';
 import '../../domain/models/trip.dart';
 import '../database.dart';
 import '../mappers.dart';
+import '../seed/built_in_icon_updates.dart';
 
 /// 백업 파일이 깨졌거나 이 앱이 만든 형식이 아닐 때.
 class BackupFormatException implements Exception {
@@ -280,6 +281,7 @@ class BackupCodec {
         b.insertAll(_db.tripItems, data.tripItems);
       });
       await _db.settingsDao.saveSettings(data.settings);
+      await refreshBuiltInIcons(_db);
     });
   }
 

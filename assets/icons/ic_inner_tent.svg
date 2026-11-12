@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="#111111"><path d="M5 40L24 12l19 28z"></path><path d="M19 40l5-10 5 10z" opacity="0.4"></path><path d="M24 12v28" stroke="currentColor" stroke-width="1.2" opacity="0.4" fill="none"></path><path d="M9 34h30" stroke="currentColor" stroke-width="1.2" opacity="0.4" fill="none" stroke-dasharray="2 2"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64" fill="#111111">
+<title>이너텐트 — 망사 몸체와 욕조형 바닥</title>
+<path d="M7 45C9 28 16 17 25 14C34 17 41 29 43 46L57 42C53 27 43 17 29 14" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 44L42 46L58 42V51L43 56L6 52Z"/>
+<path d="M16 44V34C16 27 19 23 25 22C31 24 34 30 34 36V45" fill="none" stroke="#111111" stroke-width="2.5"/>
+<g fill="none" stroke="#111111" stroke-width="1.5" opacity=".4">
+<path d="M20 27V44M25 25V45M30 29V45M17 32H32M17 37H33M17 42H33M39 23L46 45M45 28L51 44M42 32L49 30M44 38L53 35M46 43L55 40"/>
+</g>
+<path d="M25 10V14M24 9H26" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+</svg>

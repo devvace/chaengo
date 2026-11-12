@@ -7,7 +7,7 @@ Flutter: assets/icons/에 그대로 두고 flutter_svg로 렌더링(colorFilter�
 | --- | --- | --- |
 | 텐트 | ic_tent.svg | game-icons.net / delapouite/camping-tent (CC BY 3.0) |
 | 타프 | ic_tarp.svg | 자체 제작 (CHAENGO) |
-| 팩 | ic_peg.svg | game-icons.net / delapouite/stake-hammer (CC BY 3.0) |
+| 팩 | ic_peg.svg | 챙고 자체 제작 · 2026-11 확정 (assets/icons/INDEX-custom.md) |
 | 그라운드시트 | ic_groundsheet.svg | 자체 제작 (CHAENGO) |
 | 침낭 | ic_sleeping_bag.svg | game-icons.net / delapouite/sleeping-bag (CC BY 3.0) |
 | 매트 | ic_mat.svg | game-icons.net / delapouite/rolled-cloth (CC BY 3.0) |
